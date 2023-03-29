@@ -1,21 +1,28 @@
+import { useContext } from "react";
 import DisplayMovies from "./DisplayMovies";
+import { SearchTermContext } from "../App";
 
-function SearchMovies({ result, handleClick }) {
-  function getInputValue() {
-    let inputValue = document.getElementById("search").value;
-    return inputValue;
-  }
+function SearchMovies({ result }) {
+    let inputValue;
 
-  return (
-    <section>
-      <input id="search" type="text" placeholder="search..." />
-      <button type="button" onClick={() => handleClick(getInputValue)}>
-        Sök
-      </button>
+    const { setSearchTerm } = useContext(SearchTermContext);
 
-      <DisplayMovies result={result} />
-    </section>
-  );
+    return (
+        <section>
+            <input
+                onChange={(e) => {
+                    inputValue = e.target.value;
+                }}
+                type="text"
+                placeholder="search..."
+            />
+            <button type="button" onClick={() => setSearchTerm(inputValue)}>
+                Sök
+            </button>
+
+            <DisplayMovies />
+        </section>
+    );
 }
 
 export default SearchMovies;
