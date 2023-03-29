@@ -1,0 +1,24 @@
+.searchMovie {
+    padding: 2rem;
+}
+
+.inputField {
+    background-color: transparent;
+    border: 1px solid #a0a0a0;
+    padding: 0.8rem 0.5rem;
+    color: #ffffff;
+    border-radius: 6px;
+    width: 300px;
+    margin-right: 1rem;
+}
+
+.searchButton {
+    border-radius: 6px;
+    background-color: #ffb92a;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 2rem;
+    color: #201f28;
+    font-size: 20px;
+    font-weight: 700;
+}

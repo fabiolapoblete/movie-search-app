@@ -1,19 +1,29 @@
 import DisplayMovies from "./DisplayMovies";
+import "./SearchMovie.css";
 
-function SearchMovies({ result, handleClick }) {
-  function getInputValue() {
-    let inputValue = document.getElementById("search").value;
-    return inputValue;
-  }
+function SearchMovies({ handleClick }) {
+  let inputValue;
 
   return (
-    <section>
-      <input id="search" type="text" placeholder="search..." />
-      <button type="button" onClick={() => handleClick(getInputValue)}>
-        Sök
+    <section className="searchMovie">
+      <input
+        className="inputField"
+        onChange={(e) => {
+          inputValue = e.target.value;
+        }}
+        id="search"
+        type="text"
+        placeholder="search..."
+      />
+      <button
+        className="searchButton"
+        type="button"
+        onClick={() => handleClick(inputValue)}
+      >
+        SEARCH
       </button>
 
-      <DisplayMovies result={result} />
+      <DisplayMovies />
     </section>
   );
 }

@@ -1,16 +1,19 @@
 import "./App.css";
 import SearchMovies from "./Components/SearchMovies";
-import { useEffect, useState } from "react";
-import DisplayMovies from "./Components/DisplayMovies";
+import { createContext, useEffect, useState } from "react";
 
 const API_URL = "http://www.omdbapi.com";
 const API_KEY = "37fe945a";
+let page = 1;
+
+export const ResultContext = createContext();
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("Emma");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  let URL = API_URL + "/?apikey=" + API_KEY + "&s=" + searchTerm;
+  let URL =
+    API_URL + "/?apikey=" + API_KEY + "&s=" + searchTerm + "&page=" + page;
 
   useEffect(() => {
     fetch(URL)
@@ -24,11 +27,16 @@ function App() {
   let resultList = searchResult.Search;
 
   return (
-    <div className="App">
-      <main>
-        <SearchMovies result={resultList} handleClick={setSearchTerm} />
-      </main>
-    </div>
+    <ResultContext.Provider value={resultList}>
+      <div className="App">
+        <header className="header">
+          <h1>MOVIE SEARCH</h1>
+        </header>
+        <main>
+          <SearchMovies handleClick={setSearchTerm} />
+        </main>
+      </div>
+    </ResultContext.Provider>
   );
 }
 

@@ -1,12 +1,22 @@
 .movieCard {
-    background-color: #222;
-    color: whitesmoke;
-    padding: 2rem;
+    background-color: #ffb92a;
+    padding: 0.8rem 0.5rem;
+    color: #201f28;
+    border-radius: 6px;
+    box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
     width: 500px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 18px;
     margin-bottom: 2rem;
-    border-radius: 8px;
+}
+
+img {
+    width: 200px;
+    height: 300px;
 }

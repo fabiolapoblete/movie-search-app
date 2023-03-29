@@ -1,17 +1,8 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+.header{
   padding: 2rem;
+  box-shadow: 1px 1px 5px #222;
+  width: 100%;
+  background-color: #ffb92a;
 }
-
-body {
-  display: flex;
-
-}
-
 
 
