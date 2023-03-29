@@ -8,6 +8,8 @@ let page = 1;
 
 export const ResultContext = createContext();
 
+export const SearchTermContext = createContext(null);
+
 function App() {
   const [searchResult, setSearchResult] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
